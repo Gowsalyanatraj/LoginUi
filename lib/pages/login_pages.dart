@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:loginui/components/my_button.dart';
 import 'package:loginui/components/my_textfield.dart';
 
+import 'forgot_password.dart';
+
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
@@ -10,7 +12,7 @@ class LoginPage extends StatelessWidget {
   final passwordControl = TextEditingController();
 
   //sign user in method
-  void signUserIn(){}
+  void signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
@@ -23,134 +25,131 @@ class LoginPage extends StatelessWidget {
             children: [
               const SizedBox(height: 50.0),
 
-          //logo
-             const Icon(
-               Icons.lock,
-               size: 100,
-            ),
-        
-          const SizedBox(height: 40.0),
+              //logo
+              const Icon(
+                Icons.lock,
+                size: 100,
+              ),
 
-          //welcome back you've been missed
+              const SizedBox(height: 40.0),
 
-          Text(
-            'Welcome back you\'ve been missed',
-            style: TextStyle(
-              color: Colors.grey.shade700,
-              fontSize: 16.0,
-               )
-            ),
+              //welcome back you've been missed
 
-            const SizedBox(height: 25.0),
-        
-          //username textfield
-             MyTextFields(
-              controller: usernameController,
-               hintText: 'username', 
-               obscureText: false,
-               ),
-           
-         
-         const SizedBox(height: 10.0),
-        
-          //password textfield
+              Text('Welcome back you\'ve been missed',
+                  style: TextStyle(
+                    color: Colors.grey.shade700,
+                    fontSize: 16.0,
+                  )),
+
+              const SizedBox(height: 25.0),
+
+              //username textfield
+              MyTextFields(
+                controller: usernameController,
+                hintText: 'username',
+                obscureText: false,
+              ),
+
+              const SizedBox(height: 10.0),
+
+              //password textfield
               MyTextFields(
                 controller: passwordControl,
-               hintText: 'password', 
-               obscureText: true, 
+                hintText: 'password',
+                obscureText: true,
               ),
-            
 
-            const SizedBox(height: 10),
+              const SizedBox(height: 10),
 
-          //forgot password
-          
-        Text(
-          'Forget Password?',
-          style: TextStyle(color: Colors.grey.shade600),
-            ),
-              
+              //forgot password
 
-
-          const SizedBox(height: 10.0),
-
-          //signin button
-              MyButton(
-                onTap: signUserIn
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ForgotPasswordPage();
+                  }));
+                },
+                child: Text(
+                  'Forget Password?',
+                  style: TextStyle(color: Colors.blue),
                 ),
+              ),
 
-            const SizedBox(height: 10.0),
-        
-          //or continue with
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-             child: Row(
-              children: [
-                Expanded(
-                  child: 
-                  Divider(
-                   thickness: 0.5,
-                   color: Colors.grey.shade400,
-                  ),
-               ),
+              const SizedBox(height: 10.0),
+
+              //signin button
+              MyButton(onTap: signUserIn),
+
+              const SizedBox(height: 10.0),
+
+              //or continue with
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Text('Or continue with'),
-              ),
-              Expanded(
-                  child: 
-                  Divider(
-                   thickness: 0.5,
-                   color: Colors.grey.shade400,
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(children: [
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.5,
+                      color: Colors.grey.shade400,
+                    ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Text('Or continue with'),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.5,
+                      color: Colors.grey.shade400,
+                    ),
+                  ),
+                ]),
               ),
-            ]
-          ),
-          ),
 
-          const SizedBox(height: 10.0),
-           
-          //google + apple sign in button
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-          //google button
-          Image.asset(
-            'assets/googlelogo.png',
-            height: 60,
-            ),
-            const SizedBox(width: 25.0),
+              const SizedBox(height: 10.0),
 
-          //apple button
-           Image.asset(
-            'assets/applelogo.png',
-            height: 60,
-            )
-           ],
-          ),
+              //google + apple sign in button
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //google button
+                  Image.asset(
+                    'assets/googlelogo.png',
+                    height: 60,
+                  ),
+                  const SizedBox(width: 25.0),
 
-            const SizedBox(height: 35.0),
-            
-          //not a member? request now
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Not a memer?',
-                style: TextStyle(color: Colors.grey.shade700),
-                ),
-              const SizedBox(width: 4.0,),
-              Text(
-                'Register now',
-                style: TextStyle(color: Colors.blue,
-                fontWeight:FontWeight.bold ),
-                )
-               ],
+                  //apple button
+                  Image.asset(
+                    'assets/applelogo.png',
+                    height: 60,
+                  )
+                ],
+              ),
+
+              const SizedBox(height: 35.0),
+
+              //not a member? request now
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Not a memer?',
+                    style: TextStyle(color: Colors.grey.shade700),
+                  ),
+                  const SizedBox(
+                    width: 4.0,
+                  ),
+                  Text(
+                    'Register now',
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  )
+                ],
               )
-            ],  
+            ],
           ),
-        ),   
+        ),
       ),
-   ); 
+    );
   }
 }
