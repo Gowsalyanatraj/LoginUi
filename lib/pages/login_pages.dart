@@ -61,7 +61,7 @@ class LoginPage extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              //forgot password
+              //forgot password=====================
 
               GestureDetector(
                 onTap: () {
