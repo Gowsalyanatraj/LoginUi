@@ -23,7 +23,18 @@ class SigIn extends StatelessWidget {
                     color: Colors.pink.shade300),
               ),
               Column(
-                children: [Text('🤗 🤗 ')],
+                children: [
+                  Text('🤗 🤗 '),
+                  Container(
+                    height: 15,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        color: Colors.purple,
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20))),
+                  )
+                ],
               )
             ]),
           ),
