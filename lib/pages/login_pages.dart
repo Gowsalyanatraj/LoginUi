@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginui/components/my_button.dart';
 import 'package:loginui/components/my_textfield.dart';
+import 'package:loginui/pages/register_now_button.dart';
 
 import 'forgot_password.dart';
 
@@ -139,11 +140,14 @@ class LoginPage extends StatelessWidget {
                   const SizedBox(
                     width: 4.0,
                   ),
-                  Text(
-                    'Register now',
-                    style: TextStyle(
-                        color: Colors.blue, fontWeight: FontWeight.bold),
-                  )
+                  TextButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return RegisterNow();
+                        }));
+                      },
+                      child: Text('Register now'))
                 ],
               )
             ],
