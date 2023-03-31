@@ -15,13 +15,12 @@ class RegisterNow extends StatelessWidget {
           width: 700,
           decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
           child: Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)))),
-            ),
-          ),
+              padding: const EdgeInsets.all(25.0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20))),
+              )),
         ),
       ),
     );
