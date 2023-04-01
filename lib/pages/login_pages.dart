@@ -99,7 +99,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   Expanded(
                     child: Divider(
-                      thickness: 0.5,
+                      thickness: 0.8,
                       color: Colors.grey.shade400,
                     ),
                   ),
@@ -134,7 +134,7 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Not a memer?',
+                    'Not a member?',
                     style: TextStyle(color: Colors.grey.shade700),
                   ),
                   const SizedBox(
@@ -147,7 +147,7 @@ class LoginPage extends StatelessWidget {
                           return RegisterNow();
                         }));
                       },
-                      child: Text('Register now'))
+                      child: Text('Register now🎗'))
                 ],
               )
             ],
