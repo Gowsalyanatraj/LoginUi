@@ -17,6 +17,9 @@ class RegisterNow extends StatelessWidget {
           child: Padding(
               padding: const EdgeInsets.all(25.0),
               child: TextFormField(
+                validator:  (value) {
+                return value!.isEmpty ? 'Please add an email' : null;
+              },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20))),

@@ -10,7 +10,7 @@ class SigIn extends StatelessWidget {
           backgroundColor: Colors.blue,
           elevation: 0,
         ),
-        backgroundColor: Color.fromARGB(255, 158, 224, 255),
+        backgroundColor:const Color.fromARGB(255, 158, 224, 255),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.only(top: 400),
@@ -24,16 +24,16 @@ class SigIn extends StatelessWidget {
               ),
               Column(
                 children: [
-                  Text('🤗 🤗 '),
+                 const Text('🤗 🤗 '),
                   Container(
                     height: 15,
                     width: 100,
-                    decoration: BoxDecoration(
+                    decoration:const BoxDecoration(
                         color: Colors.purple,
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20))),
-                  )
+                  ),
                 ],
               )
             ]),

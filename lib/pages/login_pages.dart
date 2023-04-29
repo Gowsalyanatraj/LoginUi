@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loginui/components/my_button.dart';
 import 'package:loginui/components/my_textfield.dart';
 import 'package:loginui/pages/register_now_button.dart';
-
+import 'package:http/http.dart';
 import 'forgot_password.dart';
 
 class LoginPage extends StatelessWidget {
@@ -11,9 +11,27 @@ class LoginPage extends StatelessWidget {
   //text editing controller
   final usernameController = TextEditingController();
   final passwordControl = TextEditingController();
+  
+  get uri => null;
+
+  
 
   //sign user in method
-  void signUserIn() {}
+  void signUserIn() {
+    try {
+    Response response = post(uri.parse(
+      'https://test-atre-server-v2.up.railway.app/'
+    ),
+    body: {
+      'email'  
+      'Password'
+
+    }
+    ) as Response;
+  } catch (e) {
+  print(e.toString()); 
+  }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +64,7 @@ class LoginPage extends StatelessWidget {
 
               //username textfield
               MyTextFields(
+
                 controller: usernameController,
                 hintText: 'username',
                 obscureText: false,
@@ -53,7 +72,7 @@ class LoginPage extends StatelessWidget {
 
               const SizedBox(height: 10.0),
 
-              //password textfield
+              //password textfield============
               MyTextFields(
                 controller: passwordControl,
                 hintText: 'password',
@@ -67,10 +86,10 @@ class LoginPage extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ForgotPasswordPage();
+                    return const ForgotPasswordPage();
                   }));
                 },
-                child: Text(
+                child:const Text(
                   'Forget Password?',
                   style: TextStyle(color: Colors.blue),
                 ),
@@ -93,8 +112,8 @@ class LoginPage extends StatelessWidget {
                       color: Colors.grey.shade400,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  const Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 10.0),
                     child: Text('Or continue with'),
                   ),
                   Expanded(
@@ -144,10 +163,10 @@ class LoginPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return RegisterNow();
+                          return const RegisterNow();
                         }));
                       },
-                      child: Text('Register now🎗'))
+                      child: const Text('Register now🎗'))
                 ],
               )
             ],

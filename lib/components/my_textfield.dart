@@ -16,7 +16,10 @@ class MyTextFields extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 300.0),
-      child: TextField(
+      child: TextFormField(
+        validator:  (value) {
+                return value!.isEmpty ? 'Please add an email' : null;
+              },
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
