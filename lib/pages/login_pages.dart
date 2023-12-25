@@ -66,7 +66,7 @@ class LoginPage extends StatelessWidget {
               MyTextFields(
 
                 controller: usernameController,
-                hintText: 'username',
+                hintText: 'userName',
                 obscureText: false,
               ),
 
